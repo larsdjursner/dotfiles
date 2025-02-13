@@ -1,0 +1,60 @@
+# format = """
+# $all\
+# $fill\
+# $time
+# """
+
+format = """$directory\
+$git_branch\
+$fill\
+$time
+"""
+
+add_newline = true
+
+[time]
+style = "bold #b9bfdd"
+format = "[$time]($style) "
+time_format = "%H:%M:%S"
+disabled = false
+
+[fill]
+symbol = ' ' # fill with whitespace
+
+[directory]
+style="bold blue"
+truncation_length = 3
+truncation_symbol = "../"
+
+[git_branch]
+style= "bold #ecbfe3"
+symbol = " "
+
+[git_status]
+style = "bold red"
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+
+[cmd_duration]
+style = "bold #e9d4a5"
+
+[line_break]
+disabled = true
+
+[username]
+show_always = false
+# style_user = "bold blue"
+
+[hostname]
+style = "bold #b0d89b"
+ssh_only = true
+
+# black #494c62
+# white #b9bfdd
+# green #b0d89b
+# red #df8c97
+# yellow #e9d4a5
+# blue #91abee
+# magenta #ecbfe3
+# cyan #9bd3c9
