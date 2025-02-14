@@ -1,7 +1,7 @@
 ##########################
 #     Startup Message    #
 ##########################
-# printf '\n%.0s' {1..100}
+printf '\n%.0s' {1..100}
 
 # echo "$(whoami)"
 # echo "
@@ -83,10 +83,11 @@ alias l="ls -CF"        # Compact list format
 
 # Quick file editing
 alias zshrc="code ~/.zshrc"  
+alias dotf="code ~/dotfiles"  
 alias src="echo 'Reloading ~/.zshrc'; source ~/.zshrc"  # Reload `.zshrc`
 
 # Push everything to the bottom
-# alias clear="printf '\n%.0s' {1..100}"
+alias clear="printf '\n%.0s' {1..100}"
 
 
 ##########################
