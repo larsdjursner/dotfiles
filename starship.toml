@@ -6,6 +6,7 @@
 
 format = """$directory\
 $git_branch\
+$git_status\
 $fill\
 $time
 """
@@ -13,7 +14,7 @@ $time
 add_newline = true
 
 [time]
-style = "bold #b9bfdd"
+style = "bold white"
 format = "[$time]($style) "
 time_format = "%H:%M:%S"
 disabled = false
@@ -28,7 +29,11 @@ truncation_symbol = "../"
 
 [git_branch]
 style= "bold #ecbfe3"
-symbol = " "
+# symbol = " "
+
+[git_metrics]
+added_style = 'bold blue'
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
 
 [git_status]
 style = "bold red"
@@ -37,7 +42,7 @@ diverged = '⇕⇡${ahead_count}⇣${behind_count}'
 behind = '⇣${count}'
 
 [cmd_duration]
-style = "bold #e9d4a5"
+style = "bold yellow"
 
 [line_break]
 disabled = true
@@ -47,7 +52,7 @@ show_always = false
 # style_user = "bold blue"
 
 [hostname]
-style = "bold #b0d89b"
+style = "bold green"
 ssh_only = true
 
 # black #494c62
