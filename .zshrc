@@ -94,7 +94,7 @@ alias clear="printf '\n%.0s' {1..100}"
 #   Shortcut Functions   #
 ##########################
 function ix() {
-  local path=~/Documents/dev/ix/
+  local path=~/Documents/ix/
   echo "Changing to $path"
   cd "$path" || return
 }
