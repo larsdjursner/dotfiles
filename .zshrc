@@ -56,6 +56,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # fzf
 source <(fzf --zsh)
+alias fzf="fzf; tput cup $(tput lines) 0"
 
 # Node Version Manager (NVM)
 export NVM_DIR="$HOME/.nvm"
@@ -76,10 +77,7 @@ alias ..3="cd ../../.." # Go up three directories
 alias ..4="cd ../../../.." # Go up three directories
 alias ~="cd ~"          # Go to home directory
 
-# Directory listing
-alias ll="ls -alF"      # Detailed list with file types
-alias la="ls -A"        # List all files, excluding `.` and `..`
-alias l="ls -CF"        # Compact list format
+
 
 # Quick file editing
 alias zshrc="code ~/.zshrc"  
@@ -89,6 +87,18 @@ alias src="echo 'Reloading ~/.zshrc'; source ~/.zshrc"  # Reload `.zshrc`
 # Push everything to the bottom
 alias clear="printf '\n%.0s' {1..100}"
 
+# EZA
+# alias ls='ls --color=auto'                        # color ls
+alias grep='grep --color=auto'                    # color grep
+alias ls='eza -a --icons'                         # list all files with icons
+alias ll='eza -al --icons'                        # list all files with icons 
+alias lt='eza -a --tree --level=3 --icons'        # list tree view with icons
+alias l.='eza -d .* --color=auto'                 # list hidden files
+
+# Directory listing
+alias ll="ls -alF"      # Detailed list with file types
+alias la="ls -A"        # List all files, excluding `.` and `..`
+alias l="ls -CF"        # Compact list format
 
 ##########################
 #   Shortcut Functions   #
