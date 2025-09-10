@@ -1,7 +1,7 @@
 ##########################
 #     Startup Message    #
 ##########################
-printf '\n%.0s' {1..100}
+# printf '\n%.0s' {1..100}
 
 # echo "$(whoami)"
 # echo "
@@ -66,26 +66,19 @@ export NVM_DIR="$HOME/.nvm"
 # Go environment
 export PATH=$PATH:$(go env GOPATH)/bin
 
+# zoxide
+# eval "$(zoxide init zsh)"
 
 ##########################
 #        Aliases         #
 ##########################
-# Easier navigation
-alias ..="cd .."        # Go up one directory
-alias ..2="cd ../.."    # Go up two directories
-alias ..3="cd ../../.." # Go up three directories
-alias ..4="cd ../../../.." # Go up three directories
-alias ~="cd ~"          # Go to home directory
-
-
-
 # Quick file editing
 alias zshrc="code ~/.zshrc"  
 alias dotf="code ~/dotfiles"  
 alias src="echo 'Reloading ~/.zshrc'; source ~/.zshrc"  # Reload `.zshrc`
 
 # Push everything to the bottom
-alias clear="printf '\n%.0s' {1..100}"
+# alias clear="printf '\n%.0s' {1..100}"
 
 # EZA
 # alias ls='ls --color=auto'                        # color ls
@@ -94,11 +87,30 @@ alias ls='eza -a --icons'                         # list all files with icons
 alias ll='eza -al --icons'                        # list all files with icons 
 alias lt='eza -a --tree --level=3 --icons'        # list tree view with icons
 alias l.='eza -d .* --color=auto'                 # list hidden files
-
 # Directory listing
-alias ll="ls -alF"      # Detailed list with file types
-alias la="ls -A"        # List all files, excluding `.` and `..`
-alias l="ls -CF"        # Compact list format
+# alias ll="ls -alF"      # Detailed list with file types
+# alias la="ls -A"        # List all files, excluding `.` and `..`
+# alias l="ls -CF"        # Compact list format
+
+# Replace `cd` with `z`
+# alias cd='z'
+
+# Useful aliases for zoxide
+alias zz='z .'           # Jump to a directory and stay there (works like `cd`)
+alias zb='z -b'          # Quickly jump to the last visited directory
+alias zl='zoxide query -l' # List all stored directories
+alias zs='zoxide query'  # Show the best match for a query
+alias zr='zoxide remove' # Remove a directory from the index
+alias zf='zoxide query -l | fzf'  # Fuzzy find from stored directories
+
+# # Easier navigation
+# alias ..="cd .."        # Go up one directory
+# alias ..2="cd ../.."    # Go up two directories
+# alias ..3="cd ../../.." # Go up three directories
+# alias ..4="cd ../../../.." # Go up three directories
+# alias ~="cd ~"          # Go to home directory
+
+
 
 ##########################
 #   Shortcut Functions   #
