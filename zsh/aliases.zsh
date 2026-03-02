@@ -1,6 +1,6 @@
 # Config shortcuts
-alias src="source ~/dotfiles/zsh/.zshrc && echo 'Reloaded'"
-alias setup="~/dotfiles/setup.sh"
+alias src="source ~/.dotfiles/zsh/.zshrc && echo 'Reloaded zsh'"
+alias setup="~/.dotfiles/setup.sh"
 
 # Navigation
 alias ..="cd .."

@@ -1,0 +1,23 @@
+[user]
+    name = larsdjursner
+	email = 40217101+larsdjursner@users.noreply.github.com
+
+[includeIf "gitdir:/Users/ldr/Documents/ix/"]
+    path = ~/.gitconfig.ix
+
+[core]
+    editor = code --wait      # VS Code as default editor
+    autocrlf = input          # sensible for Mac
+
+[init]
+    defaultBranch = main
+
+[merge]
+    conflictstyle = diff3     # shows base in conflict markers, very helpful
+
+[diff]
+    algorithm = histogram     # generally better diffs than default myers
+
+[alias]
+    lg = log --oneline --graph --decorate --all
+    undo = reset --soft HEAD~1
