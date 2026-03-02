@@ -1,6 +1,6 @@
 # Functions
 # Project dirs
-function ix()  { cd ~/Documents/ix/  && echo "→ ix hey" }
+function ix()  { cd ~/Documents/ix/  && echo "→ ix" }
 function dev() { cd ~/Documents/dev/ && echo "→ dev" }
 function dotf() { cd ~/.dotfiles && echo "→ .dotfiles" }
 
