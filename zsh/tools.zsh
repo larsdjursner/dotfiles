@@ -1,8 +1,8 @@
-# Homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# Starship
+eval "$(starship init zsh)"
 
-# fzf
-source <(fzf --zsh)
+# fzf (add ctrl + r keybinds search etc)
+eval "$(fzf --zsh)"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
