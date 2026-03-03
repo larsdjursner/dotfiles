@@ -6,3 +6,9 @@ export PATH="$JAVA_HOME/bin:$PATH"
 
 # Go
 export PATH=$PATH:$(go env GOPATH)/bin
+
+# VS Code
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# Google Antigravity
+export PATH="$PATH:/Applications/Antigravity.app/Contents/Resources/app/bin"
