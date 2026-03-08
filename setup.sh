@@ -3,6 +3,8 @@
 DOTFILES_DIR="$HOME/.dotfiles"
 
 mkdir -p "$HOME/.config"
+mkdir -p "$HOME/.config/ghostty"
+
 
 symlink() {
     local source="$1"
@@ -34,5 +36,6 @@ symlink "$DOTFILES_DIR/zsh/.zshenv"             "$HOME/.zshenv"
 symlink "$DOTFILES_DIR/starship/starship.toml"  "$HOME/.config/starship.toml"
 symlink "$DOTFILES_DIR/git/.gitconfig"          "$HOME/.gitconfig"
 symlink "$DOTFILES_DIR/git/.gitconfig.ix"       "$HOME/.gitconfig.ix"
+symlink "$DOTFILES_DIR/ghostty/config"          "$HOME/.config/ghostty/config"
 
 echo "Done! Next: source ~/.zshrc"

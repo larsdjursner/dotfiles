@@ -1,0 +1,58 @@
+
+# apperance
+theme = dark:Catppuccin Frappe,light:Catppuccin Latte
+background-opacity = 0.90
+background-blur-radius = 40
+cursor-style-blink = false
+cursor-invert-fg-bg = true
+mouse-hide-while-typing = true
+
+# macOS-specific settings
+macos-titlebar-style = tabs
+macos-option-as-alt = true
+
+unfocused-split-opacity = 0.97
+
+# window controls
+confirm-close-surface = true
+# window-title-font-family = VictorMono NFM Italic
+window-decoration = true
+window-padding-x = 2
+window-padding-y = 2
+window-padding-balance = true
+window-save-state = always
+
+# auto update settings
+auto-update = download
+auto-update-channel = stable
+
+# extras
+shell-integration-features = true
+copy-on-select = clipboard
+focus-follows-mouse = true
+link-url = true
+
+# custom keybindings
+keybind = super+r=reload_config 
+keybind = super+i=inspector:toggle
+keybind = super+f=toggle_fullscreen
+
+# extra tab navigation
+keybind = super+left=previous_tab
+keybind = super+right=next_tab
+
+# splits
+keybind = super+b>n=new_split:right
+keybind = super+b>m=new_split:down
+keybind = super+b>e=equalize_splits
+keybind = super+b>z=toggle_split_zoom
+
+# split navigation 
+keybind = super+b>h=goto_split:left
+keybind = super+b>j=goto_split:bottom
+keybind = super+b>k=goto_split:top
+keybind = super+b>l=goto_split:right
+keybind = super+b>left=goto_split:left
+keybind = super+b>down=goto_split:bottom
+keybind = super+b>up=goto_split:top
+keybind = super+b>right=goto_split:right
