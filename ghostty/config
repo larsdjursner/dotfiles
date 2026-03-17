@@ -32,9 +32,16 @@ copy-on-select = clipboard
 focus-follows-mouse = true
 link-url = true
 
+# macOS-native text editing
+keybind = super+left=text:\x01
+keybind = super+right=text:\x05
+keybind = super+backspace=text:\x15
+keybind = super+delete=text:\x0b
+
 # custom keybindings
 keybind = super+r=reload_config 
 keybind = super+i=inspector:toggle
+keybind = super+f=start_search
 
 # extra tab navigation
 keybind = super+k=previous_tab
@@ -45,6 +52,7 @@ keybind = super+b>n=new_split:right
 keybind = super+b>m=new_split:down
 keybind = super+b>e=equalize_splits
 keybind = super+b>z=toggle_split_zoom
+keybind = super+b>x=close_surface
 
 # split navigation 
 keybind = super+b>h=goto_split:left
