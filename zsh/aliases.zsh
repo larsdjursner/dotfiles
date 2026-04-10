@@ -17,6 +17,3 @@ alias l.='eza -d .* --color=auto'
 
 # grep
 alias grep='grep --color=auto'
-
-# Google Antigravity
-alias anti="antigravity"

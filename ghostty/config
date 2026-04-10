@@ -37,6 +37,8 @@ keybind = super+left=text:\x01
 keybind = super+right=text:\x05
 keybind = super+backspace=text:\x15
 keybind = super+delete=text:\x0b
+keybind = super+z=undo
+keybind = super+shift+z=redo
 
 # custom keybindings
 keybind = super+r=reload_config 
