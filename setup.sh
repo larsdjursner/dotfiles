@@ -1,6 +1,6 @@
-# #!/usr/bin/env
+#!/usr/bin/env zsh
 
-DOTFILES_DIR="$HOME/.dotfiles"
+DOTFILES_DIR="$HOME/dotfiles"
 
 mkdir -p "$HOME/.config"
 mkdir -p "$HOME/.config/ghostty"

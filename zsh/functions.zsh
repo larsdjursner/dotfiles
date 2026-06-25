@@ -2,7 +2,7 @@
 # Project dirs
 function ix()  { cd ~/Documents/ix/  && echo "→ ix" }
 function dev() { cd ~/Documents/dev/ && echo "→ dev" }
-function dotf() { cd ~/.dotfiles && echo "→ .dotfiles" }
+function dotf() { cd ~/dotfiles && echo "→ dotfiles" }
 
 # mkdir + cd
 function mkcd() { mkdir -p "$1" && cd "$1" }

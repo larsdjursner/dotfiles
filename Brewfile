@@ -4,6 +4,8 @@ brew "eza"
 brew "git"
 brew "starship"
 brew "nvm"
+brew "zsh-syntax-highlighting"
+brew "zoxide"
 
 # gui
 cask "ghostty"

@@ -26,6 +26,9 @@ window-save-state = always
 auto-update = download
 auto-update-channel = stable
 
+# notifications
+bell-features = system
+
 # extras
 shell-integration-features = true
 copy-on-select = clipboard
@@ -41,6 +44,8 @@ keybind = super+z=undo
 keybind = super+shift+z=redo
 
 # custom keybindings
+keybind = ctrl+shift+w=close_surface
+keybind = super+w=close_surface
 keybind = super+r=reload_config 
 keybind = super+i=inspector:toggle
 keybind = super+f=start_search
@@ -65,3 +70,6 @@ keybind = super+b>left=goto_split:left
 keybind = super+b>down=goto_split:bottom
 keybind = super+b>up=goto_split:top
 keybind = super+b>right=goto_split:right
+
+# gtab managed include
+config-file = "/Users/ldr/.config/gtab/ghostty-shortcut.conf"
