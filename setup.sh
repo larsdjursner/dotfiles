@@ -35,7 +35,30 @@ symlink "$DOTFILES_DIR/zsh/.zshrc"              "$HOME/.zshrc"
 symlink "$DOTFILES_DIR/zsh/.zshenv"             "$HOME/.zshenv"
 symlink "$DOTFILES_DIR/starship/starship.toml"  "$HOME/.config/starship.toml"
 symlink "$DOTFILES_DIR/git/.gitconfig"          "$HOME/.gitconfig"
-symlink "$DOTFILES_DIR/git/.gitconfig.ix"       "$HOME/.gitconfig.ix"
 symlink "$DOTFILES_DIR/ghostty/config"          "$HOME/.config/ghostty/config"
+
+# Work git identity + gh account switching (kept out of git; prompted once per machine)
+if [ ! -f "$DOTFILES_DIR/git/.gitconfig.work" ]; then
+    echo "Setting up work git identity (used under ~/Documents/ix/, not committed to this repo)..."
+    read "work_name?  Work git name: "
+    read "work_email?  Work git email: "
+    cat > "$DOTFILES_DIR/git/.gitconfig.work" <<EOF
+[user]
+    name = $work_name
+    email = $work_email
+EOF
+fi
+symlink "$DOTFILES_DIR/git/.gitconfig.work" "$HOME/.gitconfig.work"
+
+if [ ! -f "$DOTFILES_DIR/direnv/work.envrc" ]; then
+    read "gh_account?  gh CLI account to auto-switch to under ~/Documents/ix/ (blank to skip): "
+    if [ -n "$gh_account" ]; then
+        echo "gh auth switch -u $gh_account >/dev/null 2>&1" > "$DOTFILES_DIR/direnv/work.envrc"
+    else
+        cp "$DOTFILES_DIR/direnv/work.envrc.example" "$DOTFILES_DIR/direnv/work.envrc"
+    fi
+fi
+mkdir -p "$HOME/Documents/ix"
+symlink "$DOTFILES_DIR/direnv/work.envrc" "$HOME/Documents/ix/.envrc"
 
 echo "Done! Next: source ~/.zshrc"

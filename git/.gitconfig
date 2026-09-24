@@ -2,8 +2,8 @@
     name = larsdjursner
 	email = 40217101+larsdjursner@users.noreply.github.com
 
-[includeIf "gitdir:/Users/ldr/Documents/ix/"]
-    path = ~/.gitconfig.ix
+[includeIf "gitdir:~/Documents/ix/"]
+    path = ~/.gitconfig.work
 
 [core]
     editor = code --wait      # VS Code as default editor
@@ -26,3 +26,9 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
