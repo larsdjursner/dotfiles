@@ -39,8 +39,15 @@ eval "$(fzf --zsh)"
 # Zoxide
 eval "$(zoxide init zsh)"
 
+# direnv
+eval "$(direnv hook zsh)"
+
 # Syntax highlighting (must be before starship)
 source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
+# worktrunk
+eval "$(wt config shell init zsh)"
+
 # Starship has to be last
 eval "$(starship init zsh)"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
