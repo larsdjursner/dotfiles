@@ -4,6 +4,7 @@ DOTFILES_DIR="$HOME/dotfiles"
 
 mkdir -p "$HOME/.config"
 mkdir -p "$HOME/.config/ghostty"
+mkdir -p "$HOME/.config/worktrunk/hooks"
 
 
 symlink() {
@@ -36,6 +37,8 @@ symlink "$DOTFILES_DIR/zsh/.zshenv"             "$HOME/.zshenv"
 symlink "$DOTFILES_DIR/starship/starship.toml"  "$HOME/.config/starship.toml"
 symlink "$DOTFILES_DIR/git/.gitconfig"          "$HOME/.gitconfig"
 symlink "$DOTFILES_DIR/ghostty/config"          "$HOME/.config/ghostty/config"
+symlink "$DOTFILES_DIR/worktrunk/config.toml"   "$HOME/.config/worktrunk/config.toml"
+symlink "$DOTFILES_DIR/worktrunk/hooks/link-env-files.sh" "$HOME/.config/worktrunk/hooks/link-env-files.sh"
 
 # Work git identity + gh account switching (kept out of git; prompted once per machine)
 if [ ! -f "$DOTFILES_DIR/git/.gitconfig.work" ]; then

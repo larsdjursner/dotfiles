@@ -1,0 +1,11 @@
+# Global (all-repos) worktrunk config.
+# Symlinks gitignored env-like files (.env, .env.*, *.env, .envrc) from the main checkout into
+# every new/switched-to worktree, so per-machine config is never missing and never copied.
+# Runs in the background (worktrunk convention for post-* hooks); logs land under
+# <main-repo>/.git/wt/logs/. Script: ~/.config/worktrunk/hooks/link-env-files.sh
+
+[post-start]
+link-env = "$HOME/.config/worktrunk/hooks/link-env-files.sh '{{ repo_path }}' '{{ worktree_path }}'"
+
+[post-switch]
+link-env = "$HOME/.config/worktrunk/hooks/link-env-files.sh '{{ repo_path }}' '{{ worktree_path }}'"
