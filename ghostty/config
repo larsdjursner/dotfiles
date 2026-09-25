@@ -30,7 +30,7 @@ auto-update-channel = stable
 bell-features = system
 
 # extras
-shell-integration-features = true
+shell-integration-features = no-title
 copy-on-select = clipboard
 focus-follows-mouse = true
 link-url = true

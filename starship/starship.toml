@@ -1,4 +1,5 @@
-format = """$directory\
+format = """${custom.worktree}\
+$directory\
 $git_branch\
 $git_status\
 $fill\
@@ -20,6 +21,14 @@ symbol = ' ' # fill with whitespace
 style="bold blue"
 truncation_length = 3
 truncation_symbol = "../"
+
+[custom.worktree]
+when = 'set -- $(git rev-parse --path-format=absolute --git-dir --git-common-dir 2>/dev/null); [ "$1" != "$2" ]'
+command = 'basename "$(dirname "$(git rev-parse --path-format=absolute --git-common-dir)")"'
+require_repo = true
+shell = ["sh"]
+style = "bold #9bd3c9"
+format = "[$output ⎇]($style) "
 
 [git_branch]
 style= "bold #ecbfe3"
