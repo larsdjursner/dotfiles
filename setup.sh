@@ -45,7 +45,7 @@ symlink "$DOTFILES_DIR/ghostty/config"          "$HOME/.config/ghostty/config"
 symlink "$DOTFILES_DIR/worktrunk/config.toml"   "$HOME/.config/worktrunk/config.toml"
 symlink "$DOTFILES_DIR/worktrunk/hooks/link-env-files.sh" "$HOME/.config/worktrunk/hooks/link-env-files.sh"
 
-# Work git identity + gh account switching (kept out of git; prompted once per machine)
+# Work git identity + gh account (kept out of git; prompted once per machine)
 if [ ! -f "$DOTFILES_DIR/git/.gitconfig.work" ]; then
     echo "Setting up work git identity (used under ~/Documents/ix/, not committed to this repo)..."
     read "work_name?  Work git name: "
@@ -58,15 +58,12 @@ EOF
 fi
 symlink "$DOTFILES_DIR/git/.gitconfig.work" "$HOME/.gitconfig.work"
 
-if [ ! -f "$DOTFILES_DIR/direnv/work.envrc" ]; then
-    read "gh_account?  gh CLI account to auto-switch to under ~/Documents/ix/ (blank to skip): "
-    if [ -n "$gh_account" ]; then
-        echo "gh auth switch -u $gh_account >/dev/null 2>&1" > "$DOTFILES_DIR/direnv/work.envrc"
-    else
-        cp "$DOTFILES_DIR/direnv/work.envrc.example" "$DOTFILES_DIR/direnv/work.envrc"
-    fi
+if [ ! -f "$DOTFILES_DIR/direnv/work.env" ]; then
+    read "gh_account?  gh CLI account to use under ~/Documents/ix/ (blank to skip): "
+    echo "GH_WORK_ACCOUNT=$gh_account" > "$DOTFILES_DIR/direnv/work.env"
 fi
 mkdir -p "$HOME/Documents/ix"
 symlink "$DOTFILES_DIR/direnv/work.envrc" "$HOME/Documents/ix/.envrc"
+direnv allow "$HOME/Documents/ix"
 
 echo "Done! Next: source ~/.zshrc"
