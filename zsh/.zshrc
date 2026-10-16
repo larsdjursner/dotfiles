@@ -51,3 +51,4 @@ eval "$(wt config shell init zsh)"
 # Starship has to be last
 eval "$(starship init zsh)"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export PATH="/Applications/IntelliJ IDEA.app/Contents/MacOS:$PATH"
