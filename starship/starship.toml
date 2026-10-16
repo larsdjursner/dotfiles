@@ -3,6 +3,7 @@ $directory\
 $git_branch\
 $git_status\
 $fill\
+${custom.gh_user}\
 $time
 """
 
@@ -29,6 +30,15 @@ require_repo = true
 shell = ["sh"]
 style = "bold #9bd3c9"
 format = "[$output ⎇]($style) "
+
+# gh account in use: $GH_ACCOUNT (set by direnv under ~/Documents/ix/), else gh's active account
+[custom.gh_user]
+when = 'git remote -v | grep -q github.com'
+command = 'echo "${GH_ACCOUNT:-$(gh config get -h github.com user)}"'
+require_repo = true
+shell = ["sh"]
+style = "bold #91abee"
+format = "[@$output]($style) "
 
 [git_branch]
 style= "bold #ecbfe3"
