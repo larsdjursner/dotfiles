@@ -16,6 +16,7 @@ brew "docker-compose"
 brew "wget"
 brew "worktrunk"
 brew "libpq"
+brew "duti"
 
 # gui
 cask "ghostty"

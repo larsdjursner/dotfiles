@@ -31,6 +31,11 @@ fi
 echo "Installing Homebrew packages..."
 brew bundle --file="$DOTFILES_DIR/Brewfile"
 
+echo "Setting VS Code as default app for shell scripts..."
+for type in public.shell-script .sh .bash .zsh; do
+    duti -s com.microsoft.VSCode "$type" all
+done
+
 echo "Creating symlinks..."
 symlink "$DOTFILES_DIR/zsh/.zshrc"              "$HOME/.zshrc"
 symlink "$DOTFILES_DIR/zsh/.zshenv"             "$HOME/.zshenv"

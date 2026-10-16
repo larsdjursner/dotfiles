@@ -9,7 +9,11 @@ mouse-hide-while-typing = true
 
 # macOS-specific settings
 macos-titlebar-style = tabs
-macos-option-as-alt = true
+# Option must type ~ { } [ ] | \ on the Danish layout, so Alt is sent only for these keys
+macos-option-as-alt = false
+keybind = alt+left=esc:b
+keybind = alt+right=esc:f
+keybind = alt+backspace=text:\x1b\x7f
 
 unfocused-split-opacity = 0.97
 
